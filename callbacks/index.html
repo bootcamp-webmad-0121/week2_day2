@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        const applyNormalVAT = subtotal => console.log('El precio final es de', subtotal * 1.21, '(IVA regular)')
+        const applyReducedVAT = subtotal => console.log('El precio final es de', subtotal * 1.1, '(IVA reducido)')
+        const applyExentVAT = subtotal => console.log('El precio final es de', subtotal, '(IVA exento)')
+
+        function getSubtotal(cost, action) {
+            const benefit = 1.15
+            const subtotal = cost * benefit
+            action(subtotal)
+        }
+
+        getSubtotal(1000, applyExentVAT)
+        getSubtotal(27653, applyNormalVAT)
+
+    </script>
+</body>
+
+</html>
